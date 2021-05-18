@@ -1,0 +1,175 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Edit Profile</h4>
+                    </div>
+                    <div class="content">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>idUtilisateur </label>
+                                        <input type="text" class="form-control" disabled placeholder="Company" value={{idUtilisateur}}>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        <input type="text" class="form-control" placeholder="Username" value={{utilisateur.nom}}>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email </label>
+                                        <input type="email" class="form-control" placeholder="Email" value={{utilisateur.email}}>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nom</label>
+                                        <input type="text" class="form-control" placeholder="Nom" value={{utilisateur.nom}}>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Prenom</label>
+                                        <input type="text" class="form-control" placeholder="Last Name" value={{utilisateur.prenom}}>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Adresse</label>
+                                        <input type="text" class="form-control" placeholder=" Adresse" value={{utilisateur.adresse}}>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Abonnement</label>
+                                        <select type="text" class="form-control" value="1">
+                                            <option value="3" selected hidden>{{getNameOfSubscription(utilisateur.typeAbonnement)}}</option>
+                                            <option value="3">Essentiel</option>
+                                            <option value="2">Basic</option>
+                                            <option value="1">Pro</option>
+                                            <option value="4">Etudiant</option>
+                                        </select>
+                                      
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>nombre livre autorise</label>
+                                        <input type="text" class="form-control"  value={{utilisateur.nombreAuto}}>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>date expiration</label>
+                                        <input type="date" class="form-control" value={{utilisateur.dateExpiration}}>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card card-user">
+                    <br>
+                    <div class="image">
+                        <img src="../../assets/img/4105938-account-card-id-identification-identity-card-profile-user-profile_113929.png" alt="..."/>
+                    </div>
+                    <div class="content-card">
+                        <div class="author">
+                            <a href="#">  
+                                <h4 class="title">Mike Andrew<br />
+                                    <small>michael24</small>
+                                    
+                                </h4>
+                            </a>
+                            <br>
+                            <div class="col-md-3">
+                                <div style="min-width: 20vh;" class="form-group">
+                                    <label>Carte ID</label>
+                                    <input type="text" class="form-control" placeholder="Username" value={{utilisateur.nom}}>
+                                    <label>date expiration</label>
+                                    <input type="text" class="form-control" placeholder="Username" value={{utilisateur.nom}}>
+                                    <button type="submit" class="btn btn-info btn-fill pull-right confirm refresh">Actualiser
+                                    </button>
+                                    <button type="submit" class="btn btn-info btn-fill pull-right confirm ">Confirmer</button>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    
+                    </div>
+                    
+                    
+                    <hr>
+                    
+                   
+                </div>
+            </div>
+  
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Liste de tous les livres</h4>
+                    <p class="category"> livres</p>
+                </div>
+                <div class="content table-responsive table-full-width">
+                      <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th >codeBar</th>
+                                    <th >Titre</th>
+                                    <th >Date retour</th>
+                                    <th >statut</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                               <tr *ngFor="let emprunt of emprunts"  >
+                                    <td>{{emprunt.codeBar}}</td>
+                                    <td>{{emprunt.titre}}</td>
+                                    <td>{{emprunt.dateFin}}</td>
+                                    <td>{{getStatut(emprunt.statut)}}</td>
+                       
+                                </tr>
+                         
+                            </tbody>
+                      </table>
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+       
+
+
+
+

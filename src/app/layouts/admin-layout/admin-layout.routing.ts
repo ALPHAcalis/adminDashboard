@@ -11,6 +11,8 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { ListeLivresComponent } from '../../liste-livres/liste-livres.component';
 import { AjouterLivreComponent } from '../../ajouter-livre/ajouter-livre.component';
 import { InformationLivreComponent } from '../../information-livre/information-livre.component';
+import { ListeUtilisateurComponent } from '../../liste-utilisateur/liste-utilisateur.component';
+import { InfoUtilisateurComponent } from '../../info-utilisateur/info-utilisateur.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: HomeComponent },
@@ -24,4 +26,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'ajouterlivre',        component: AjouterLivreComponent },
     { path: 'informationLivre',        component: InformationLivreComponent },
+    { path: 'listeUtilisateur',        component: ListeUtilisateurComponent },
+    { path: 'listeUtilisateur/:idUtilisateur',        component: InfoUtilisateurComponent },
 ];

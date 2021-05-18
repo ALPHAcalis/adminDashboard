@@ -15,6 +15,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { ListeLivresComponent } from './liste-livres/liste-livres.component';
 import { AjouterLivreComponent } from './ajouter-livre/ajouter-livre.component';
 import { InformationLivreComponent } from './information-livre/information-livre.component';
+import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur.component';
+import { InfoUtilisateurComponent } from './info-utilisateur/info-utilisateur.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { InformationLivreComponent } from './information-livre/information-livre
     AdminLayoutComponent,
     ListeLivresComponent,
     AjouterLivreComponent,
-    InformationLivreComponent
+    InformationLivreComponent,
+    ListeUtilisateurComponent,
+    InfoUtilisateurComponent
   ],
   providers: [FormBuilder,ReactiveFormsModule,],
   bootstrap: [AppComponent]
