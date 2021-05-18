@@ -8,7 +8,7 @@ import { tap } from 'rxjs/operators';
 })
 export class ListeLivresService {
 
-  private url="https://library.elmaroufi.com/Biblio_API/api/post/"
+  private url="http://localhost:3000/SuperUserAPI/api/livre/"
 
   httpOptions: { headers: HttpHeaders } = {
       headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -19,7 +19,17 @@ export class ListeLivresService {
 
 
   fetchAll(): Observable<any[]>{
-      return this.http.get<any[]>(this.url+'read.php',{responseType:'json'}).pipe(
+      return this.http.get<any[]>(this.url+'getLivres.php',{responseType:'json'}).pipe(
+        tap((_)=>console.log('fetched etudiants'))
+      )    
+  }
+  getLivreEmprunte(): Observable<any[]>{
+      return this.http.get<any[]>(this.url+'getLivreEmprunte.php',{responseType:'json'}).pipe(
+        tap((_)=>console.log('fetched etudiants'))
+      )    
+  }
+  getLivreEnRetard(): Observable<any[]>{
+      return this.http.get<any[]>(this.url+'getLivreEnRetard.php',{responseType:'json'}).pipe(
         tap((_)=>console.log('fetched etudiants'))
       )    
   }
@@ -28,4 +38,5 @@ export class ListeLivresService {
     console.log(fd)
     return this.http.post('https://admin.library.elmaroufi.com/addBook.php',fd)
   }
+  
 }

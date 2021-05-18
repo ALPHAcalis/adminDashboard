@@ -4,8 +4,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Striped Table with Hover</h4>
-                        <p class="category">Here is a subtitle for this table</p>
+                        <h4 class="title">Liste de tous les livres</h4>
+                        <p class="category">{{nombreLivre}} livres</p>
                     </div>
                     <div class="content table-responsive table-full-width">
                           <table class="table table-hover table-striped">
@@ -15,15 +15,96 @@
                                         <th >Titre</th>
                                         <th >genre</th>
                                         <th >date Achat</th>
+                                        <th >quantite</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let row of listeLivre">
-                                        <td >{{row.codeBar}}</td>
-                                        <td >{{row.nomLivre}}</td>
-                                        <td >rerze</td>
-                                        <td >rerze</td>
+                                   <tr  *ngFor="let livre of listeLivre">
+                                        <td>{{livre.codeBar}}</td>
+                                        <td>{{livre.nomLivre}}</td>
+                                        <td>{{livre.genreLitteraire}}</td>
+                                        <td>{{livre.dateAjout}}</td>
+                                        <td>{{livre.quantite}}</td>
                                     </tr>
+                             
+                                </tbody>
+                          </table>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Liste des livres emprunté</h4>
+                        <p class="category">{{nombreLivreEmprunt}} livres</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                          <table class="table table-hover table-striped" >
+                                <thead >
+                                    <tr>
+                                        <th >codeBar</th>
+                                        <th >Titre</th>
+                                        <th >date de retour</th>
+                                        <th >nom eprunteur</th>
+                                        <th >email emprunteur</th>
+                                      
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                   <tr  *ngFor="let livre of listeLivreEmprunte">
+                                        <td>{{livre.codeBar}}</td>
+                                        <td>{{livre.nomLivre}}</td>
+                                        <td>{{livre.DateFin}}</td>
+                                        <td>{{livre.nom}}</td>
+                                        <td>{{livre.email}}</td>
+                                    </tr>     
+                                </tbody>
+                          </table>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Liste des livres en retard</h4>
+                        <p class="category">{{nombreLivreEnRetard}} livres</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                          <table class="table table-hover table-striped" >
+                                <thead >
+                                    <tr>
+                                        <th >codeBar</th>
+                                        <th >Titre</th>
+                                        <th >date de retour</th>
+                                        <th >nom eprunteur</th>
+                                        <th >email emprunteur</th>
+                                        
+                                      
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                   <tr  *ngFor="let livre of listeLivreEnRetard">
+                                        <td>{{livre.codeBar}}</td>
+                                        <td>{{livre.nomLivre}}</td>
+                                        <td>{{livre.DateFin}}</td>
+                                        <td>{{livre.nom}}</td>
+                                        <td>{{livre.email}}</td>
+                                        <td><button type="submit"   class="btn btn-info btn-fill pull-right">Lancer un rappel</button></td>
+                                    </tr>
+                             
                                 </tbody>
                           </table>
 

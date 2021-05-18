@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ListeLivresComponent } from './liste-livres/liste-livres.component';
 import { AjouterLivreComponent } from './ajouter-livre/ajouter-livre.component';
+import { InformationLivreComponent } from './information-livre/information-livre.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AjouterLivreComponent } from './ajouter-livre/ajouter-livre.component';
     AppComponent,
     AdminLayoutComponent,
     ListeLivresComponent,
-    AjouterLivreComponent
+    AjouterLivreComponent,
+    InformationLivreComponent
   ],
   providers: [FormBuilder,ReactiveFormsModule,],
   bootstrap: [AppComponent]
