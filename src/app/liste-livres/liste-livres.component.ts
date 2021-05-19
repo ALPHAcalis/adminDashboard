@@ -25,10 +25,12 @@ export class ListeLivresComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-      this.getLivre();
+      this.getLivre().then(()=>{
+        this.filtratedBookList = this.listeLivre;
+      });
       this.getLivreEmprunt();
       this.getLivreEnRetard();
-      this.filtratedBookList = this.listeLivre;
+  
   }
 
   async getLivre(){
@@ -66,7 +68,8 @@ export class ListeLivresComponent implements OnInit {
 
     filterBookName(x, str) {
         if (typeof(x.nomLivre) === 'string' && typeof(x.codeBar) === 'string' ) {
-            const nx = this.normalizeString(x.nomLivre);
+            const nx =
+             this.normalizeString(x.nomLivre);
             const cx = this.normalizeString(x.codeBar);
             return nx.trim().toLowerCase().includes(str) || cx.trim().toLowerCase().includes(str);
         } else {

@@ -22,10 +22,9 @@ export class InfoUtilisateurComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    
     this.getUtilisateur(this.idUtilisateur);
     this.geEmpruntUtilisateur(this.idUtilisateur);
-    this.initForm()
+    this.initForm();
   }
 
   initForm() {
@@ -49,7 +48,6 @@ export class InfoUtilisateurComponent implements OnInit {
   }
   async geEmpruntUtilisateur(idUtilisateur:number){
      this.emprunts = await this.infoUtilisateur.getUsersBooks(idUtilisateur).toPromise();
-
      this.usersForm.controls['firstName'].setValue(this.utilisateur.prenom)
      this.usersForm.controls['lastName'].setValue(this.utilisateur.nom)
      this.usersForm.controls['email'].setValue(this.utilisateur.email)  
