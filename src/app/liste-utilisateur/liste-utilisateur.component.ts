@@ -36,6 +36,7 @@ export class ListeUtilisateurComponent implements OnInit {
     }
   }
 
+
   filterUser(x, str) {
     const a = ['idUtilisateur', 'nom', 'prenom'];
     for (let i = 0; i < a.length; i++) {
