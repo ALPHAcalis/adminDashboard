@@ -15,7 +15,9 @@ export class ListeUtilisateurComponent implements OnInit {
   constructor(private utilisateur:UtilisateursService) { }
 
   ngOnInit(): void {
-    this.getAllUsers();
+    this.getAllUsers().then(() => {
+      this.filteredUserList = this.listeUtilisateur;
+    });
   }
 
 
