@@ -67,14 +67,18 @@ export class ListeLivresComponent implements OnInit {
     }
 
     filterBookName(x, str) {
-        if (typeof(x.nomLivre) === 'string' && typeof(x.codeBar) === 'string' ) {
-            const nx =
-             this.normalizeString(x.nomLivre);
-            const cx = this.normalizeString(x.codeBar);
-            return nx.trim().toLowerCase().includes(str) || cx.trim().toLowerCase().includes(str);
-        } else {
-            return false;
+
+        const a = ['nomLivre', 'codeBar', 'genreLitteraire'];
+        for (let i = 0; i < a.length; i++) {
+            const p = a[i];
+            if (typeof(x[p]) !== 'string') {
+                return false;
+            } else if (this.normalizeString(x[p]).trim().toLowerCase().includes(str)) {
+                return true
+            }
+
         }
+        return false;
     }
 
     normalizeString(str) {
