@@ -1,0 +1,43 @@
+<div class="main-content">
+ 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Liste des livres emprunté</h4>
+                        <p class="category">{{nombreLivreEmprunt}} livres</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                          <table class="table table-hover table-striped" >
+                                <thead >
+                                    <tr>
+                                        <th >codeBar</th>
+                                        <th >Titre</th>
+                                        <th >date de retour</th>
+                                        <th >nom eprunteur</th>
+                                        <th >email emprunteur</th>
+                                     
+                                      
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                   <tr  *ngFor="let livre of listeLivreEmprunte">
+                                        <td>{{livre.codeBar}}</td>
+                                        <td>{{livre.nomLivre}}</td>
+                                        <td>{{livre.DateFin}}</td>
+                                        <td>{{livre.nom}}</td>
+                                        <td>{{livre.email}}</td>
+                                        <td><button type="submit" (click)="returnLivre(livre.codeBar,livre.idUtilisateur)"  class="btn btn-info btn-fill pull-right">Retourner</button></td>
+                                    </tr>     
+                                </tbody>
+                          </table>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</div>

@@ -7,39 +7,39 @@
                         <h4 class="title">Edit Profile</h4>
                     </div>
                     <div class="content">
-                        <form>
+                        <form [formGroup]="usersForm"  >
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>idUtilisateur </label>
-                                        <input type="text" class="form-control" disabled placeholder="Company" value={{idUtilisateur}}>
+                                        <input type="text" class="form-control" disabled value={{idUtilisateur}} >
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>Username</label>
-                                        <input type="text" class="form-control" placeholder="Username" value={{utilisateur.nom}}>
+                                        <label>Numero de telephone</label>
+                                        <input type="number " class="form-control"  formControlName="number" >
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email </label>
-                                        <input type="email" class="form-control" placeholder="Email" value={{utilisateur.email}}>
+                                        <label>Email</label>
+                                        <input type="text" class="form-control" formControlName="email"   >
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
+                               <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nom</label>
-                                        <input type="text" class="form-control" placeholder="Nom" value={{utilisateur.nom}}>
+                                        <input type="text" class="form-control"  formControlName="lastName"  >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Prenom</label>
-                                        <input type="text" class="form-control" placeholder="Last Name" value={{utilisateur.prenom}}>
+                                        <input type="text" class="form-control"  formControlName="firstName"  >
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Adresse</label>
-                                        <input type="text" class="form-control" placeholder=" Adresse" value={{utilisateur.adresse}}>
+                                        <input type="text" class="form-control"  formControlName="adresse" >
                                     </div>
                                 </div>
                             </div>
@@ -57,31 +57,33 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Abonnement</label>
-                                        <select type="text" class="form-control" value="1">
-                                            <option value="3" selected hidden>{{getNameOfSubscription(utilisateur.typeAbonnement)}}</option>
-                                            <option value="3">Essentiel</option>
-                                            <option value="2">Basic</option>
-                                            <option value="1">Pro</option>
-                                            <option value="4">Etudiant</option>
+                                        <select  formControlName="subsciprtionType"   type="text" class="form-control"  >
+                                            
+                                            <option value='0'>Essentiel</option>
+                                            <option value='1'>Basic</option>
+                                            <option value='2'>Pro</option>
+                                            <option value='3'>Etudiant</option>
                                         </select>
+                                       
                                       
                                     </div>
+
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>nombre livre autorise</label>
-                                        <input type="text" class="form-control"  value={{utilisateur.nombreAuto}}>
+                                        <input type="text" class="form-control" formControlName="bookquantity"  >
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>date expiration</label>
-                                        <input type="date" class="form-control" value={{utilisateur.dateExpiration}}>
+                                        <input type="date" placeholder="YYYY-mm-dd" formControlName="ExpireDate" class="form-control" >
                                     </div>
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+                            <button type="submit" class="btn btn-info btn-fill pull-right" (click)="updateUsersData()" >Update Profile</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>

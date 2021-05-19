@@ -12,14 +12,12 @@ export const ROUTES: RouteInfo[] = [
     { path: '/user', title: 'User Profile',  icon:'pe-7s-user', class: '' },
     { path: '/table', title: 'Table List',  icon:'pe-7s-note2', class: '' },
     { path: '/typography', title: 'Typography',  icon:'pe-7s-news-paper', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'pe-7s-science', class: '' },
-    { path: '/maps', title: 'Maps',  icon:'pe-7s-map-marker', class: '' },
     { path: '/notifications', title: 'Notifications',  icon:'pe-7s-bell', class: '' },
     { path: '/livres', title: 'livres',  icon:'pe-7s-notebook', class: '' },
     { path: '/ajouterlivre', title: 'Ajouter un Livre',  icon:'pe-7s-plus', class: '' },
-    { path: '/informationLivre', title: 'informationLivre',  icon:'pe-7s-note', class: '' },
+    { path: '/enrengistrerretour', title: 'Enregistrer un retour',  icon:'pe-7s-right-arrow', class: '' },
     { path: '/listeUtilisateur', title: 'Liste Utilisateurs',  icon:'pe-7s-users', class: '' },
-    { path: '/upgrade', title: 'Upgrade to PRO',  icon:'pe-7s-rocket', class: 'active-pro' },
+
 ];
 
 @Component({

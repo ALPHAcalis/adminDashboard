@@ -19,7 +19,6 @@ export class ListeUtilisateurComponent implements OnInit {
 
 
   async getAllUsers(){
-
     this.listeUtilisateur= await this.utilisateur.getAllUsers().toPromise();
     this.nombreUtilisateur=this.listeUtilisateur.length
   }
