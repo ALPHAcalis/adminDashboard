@@ -53,9 +53,9 @@ export class ListeLivresComponent implements OnInit {
     await this.notifcateur.addNotifications(idUtilisateur,messagae,emetteur,Objet+titreLivre).toPromise();
   }
 
-    search(str: string){
-        str = this.normalizeString(str);
-        if(!str){
+    search(event: any) {
+        const str = this.normalizeString(event.target.value);
+        if (!str) {
             this.filtratedBookList = this.listeLivre;
         } else {
             this.filtratedBookList = this.listeLivre.filter((x) => {

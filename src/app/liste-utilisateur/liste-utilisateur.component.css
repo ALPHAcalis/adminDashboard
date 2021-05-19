@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+form.book input[type=text] {
+    border-radius: 25px 0px 0px 25px;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #dae6ec;
+    border-right: none;
+    float: left;
+    width: 84%;
+    margin-left: 0.5%;
+    background: #f9fdff;
+}
+
+form.book button {
+    border-radius: 0px 25px 25px 0px;
+    float: left;
+    width: 15%;
+    margin-right: 0.5%;
+    padding: 10px;
+    background: #f9fdff;
+    color: grey;
+    font-size: 17px;
+    border: 1px solid #dae6ec;
+    border-left: none;
+    cursor: pointer;
+    text-align: right;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
