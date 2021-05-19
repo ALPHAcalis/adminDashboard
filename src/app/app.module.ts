@@ -17,6 +17,7 @@ import { AjouterLivreComponent } from './ajouter-livre/ajouter-livre.component';
 import { InformationLivreComponent } from './information-livre/information-livre.component';
 import { ListeUtilisateurComponent } from './liste-utilisateur/liste-utilisateur.component';
 import { InfoUtilisateurComponent } from './info-utilisateur/info-utilisateur.component';
+import { EnrengistrerRetourComponent } from './enrengistrer-retour/enrengistrer-retour.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { InfoUtilisateurComponent } from './info-utilisateur/info-utilisateur.co
     AjouterLivreComponent,
     InformationLivreComponent,
     ListeUtilisateurComponent,
-    InfoUtilisateurComponent
+    InfoUtilisateurComponent,
+    EnrengistrerRetourComponent
   ],
   providers: [FormBuilder,ReactiveFormsModule,],
   bootstrap: [AppComponent]

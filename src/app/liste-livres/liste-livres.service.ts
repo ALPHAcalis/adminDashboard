@@ -33,8 +33,10 @@ export class ListeLivresService {
         tap((_)=>console.log('fetched etudiants'))
       )    
   }
-  onUpload(fd:FormData){
-     
+  getReturnBook(codeBar:number,idUtilisateur:number){
+      return this.http.post(this.url+'retournerLivre.php',{codeBar: codeBar,idUtilisateur:idUtilisateur},this.httpOptions)
+  }
+  onUpload(fd:FormData){   
     console.log(fd)
     return this.http.post('https://admin.library.elmaroufi.com/addBook.php',fd)
   }

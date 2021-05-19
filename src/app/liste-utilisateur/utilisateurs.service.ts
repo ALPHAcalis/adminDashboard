@@ -20,8 +20,7 @@ export class UtilisateursService {
 
 
   getAllUsers(): Observable<any[]>{
-      return this.http.get<any[]>(this.url+'getAllUsers.php',{responseType:'json'})
-      
+      return this.http.get<any[]>(this.url+'getAllUsers.php',{responseType:'json'})   
   }
 
 }
