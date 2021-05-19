@@ -7,6 +7,12 @@
                         <h4 class="title">Liste de tous les livres</h4>
                         <p class="category">{{nombreLivre}} livres</p>
                     </div>
+                    <div class="form">
+                        <form class="book">
+                            <input type="text" placeholder="Search.." name="search" (keyup)='search($event)'>
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
                     <div class="content table-responsive table-full-width">
                           <table class="table table-hover table-striped">
                                 <thead>
@@ -19,7 +25,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   <tr  *ngFor="let livre of listeLivre">
+                                   <tr  *ngFor="let livre of filtratedBookList">
                                         <td>{{livre.codeBar}}</td>
                                         <td>{{livre.nomLivre}}</td>
                                         <td>{{livre.genreLitteraire}}</td>

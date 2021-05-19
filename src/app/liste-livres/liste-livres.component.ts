@@ -11,6 +11,7 @@ export class ListeLivresComponent implements OnInit {
 
 
     listeLivre:any[];
+    filtratedBookList:any[];
     listeLivreEmprunte:any[];
     listeLivreEnRetard:any[];
 
@@ -27,6 +28,7 @@ export class ListeLivresComponent implements OnInit {
       this.getLivre();
       this.getLivreEmprunt();
       this.getLivreEnRetard();
+      this.filtratedBookList = this.listeLivre;
   }
 
   async getLivre(){
@@ -51,7 +53,34 @@ export class ListeLivresComponent implements OnInit {
     await this.notifcateur.addNotifications(idUtilisateur,messagae,emetteur,Objet+titreLivre).toPromise();
   }
 
+    search(event: any) {
+        const str = this.normalizeString(event.target.value);
+        if (!str) {
+            this.filtratedBookList = this.listeLivre;
+        } else {
+            this.filtratedBookList = this.listeLivre.filter((x) => {
+                return this.filterBookName(x, str);
+            });
+        }
+    }
 
+    filterBookName(x, str) {
+        if (typeof(x.nomLivre) === 'string' && typeof(x.codeBar) === 'string' ) {
+            const nx = this.normalizeString(x.nomLivre);
+            const cx = this.normalizeString(x.codeBar);
+            return nx.trim().toLowerCase().includes(str) || cx.trim().toLowerCase().includes(str);
+        } else {
+            return false;
+        }
+    }
+
+    normalizeString(str) {
+        if (typeof(str) === 'string' ) {
+            return str.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+        } else {
+            return str;
+        }
+    }
 
   
 
